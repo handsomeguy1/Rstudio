@@ -12,10 +12,14 @@ i %>%
   relocate(win_margin, .after = winner) %>% 
   ggplot(aes(win_margin))+
   geom_bar(aes(fill = result), width = 0.5)+
-  labs (title = "IPL (2008-2020) Win Margin by Result", y="Win Margin")+
+  labs (title = "IPL (2008-2020) Win Margin by Runs/Wickets", y="Win Margin")+
   scale_y_continuous(limits = c(0,900))+
+  scale_fill_discrete(name = "Win by")+
   coord_polar()+
   theme_bw()+
   theme(
-    axis.title.x = element_blank()
-  )
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(face = "bold", margin = margin(t=0,b=0,l=0,r=10)),
+    axis.text.x = element_text(face = "bold", size =10, hjust = -1),
+    plot.title = element_text(face = "bold", hjust = 0.5, vjust = 2),
+      )
