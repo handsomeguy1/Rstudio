@@ -9,12 +9,13 @@ i %>%
   drop_na(result) %>% 
   mutate(win_margin = ifelse(result_margin>50, "big", "small")) %>%
   drop_na(win_margin) %>% 
-relocate(win_margin, .after = winner) %>% 
+  relocate(win_margin, .after = winner) %>% 
   ggplot(aes(win_margin))+
   geom_bar(aes(fill = result), width = 0.5)+
+  labs (title = "IPL (2008-2020) Win Margin by Result", y="Win Margin")+
   scale_y_continuous(limits = c(0,900))+
-  theme_bw()
-  
-
-
-
+  coord_polar()+
+  theme_bw()+
+  theme(
+    axis.title.x = element_blank()
+  )
