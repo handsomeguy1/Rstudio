@@ -7,7 +7,7 @@ c %>%
   select(State.Name, District.Name, Area.Name, Material_Floor_Mud, Rural.Urban) %>% 
   filter(State.Name %in% c("MAHARASHTRA", "BIHAR") & District.Name == "Aurangabad" & Rural.Urban !="Total") %>% 
   relocate(Rural.Urban, .before = Material_Floor_Mud) %>% 
- ggplot(aes(State.Name, Material_Floor_Mud, fill = (Rural.Urban)))+
+ ggplot(aes(State.Name, Material_Floor_Mud, fill = Rural.Urban))+
   geom_bar(stat = "identity", width = 0.5)+
   labs(x="", y="Houses with Mud Flooring", title = "Aurangabad Districts: Bihar & Maharashtra")+
   scale_fill_discrete(name = "Rural.Urban")+
