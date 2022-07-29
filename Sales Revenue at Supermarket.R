@@ -16,7 +16,7 @@ d %>%
   summarise(total_revenue = sum(`gross income`)) %>%  
   ggplot(aes( `Product line`,total_revenue))+
   geom_bar(stat = "identity", width = 0.5, fill = "darkblue")+
-  geom_richtext(aes(label = total_revenue, vjust = 0.29, hjust = 1.3, fontface = "bold"))+
+  geom_richtext(aes(label = total_revenue, vjust = 0.29, hjust = 1.3))+
   labs(title = "Revenue from the Sales (in $)", x = "", y= "Revenue")+
   coord_flip()+
   theme_bw()+
