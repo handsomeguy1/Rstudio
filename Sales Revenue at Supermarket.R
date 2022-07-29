@@ -21,8 +21,9 @@ d %>%
   coord_flip()+
   theme_bw()+
   theme(
-       axis.text = element_text(size = 11,face = "bold"),
-       axis.title = element_text(face = "bold")
+       axis.text = element_text(face = "bold"),
+       axis.title = element_text(face = "bold"),
+       plot.title = element_textbox(hjust =1)
   )
 
 
