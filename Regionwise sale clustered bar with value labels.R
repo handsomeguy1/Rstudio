@@ -20,10 +20,16 @@ s<-superstore
     theme(
          axis.text.y = element_blank(),
          plot.title = element_text(face = "bold", hjust = 0.5),
+         axis.title.y = element_text(face="bold"),
          axis.title.x = element_text(face = "bold"),
          axis.text.x = element_text(face = "bold"),
-         legend.title = element_text(face = "bold")
-          )
+         legend.title = element_text(face = "bold"),
+         panel.background = element_rect(fill = "white"),
+         panel.grid = element_blank(),
+         plot.background = element_rect(fill = "white"),
+         legend.background = element_rect(fill = "white"),
+         legend.text = element_text(color =  "black", face = "bold")
+                           )
  
 ggsave(s1, filename = "plot.jpeg", height = 8, width = 11, units = c("in"), dpi = 300)
   
