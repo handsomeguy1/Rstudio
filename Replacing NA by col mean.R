@@ -16,7 +16,7 @@ mean_age <- mean(t$Age, na.rm = T)
 #Replacing NA with column mean in mean_age
 t[is.na(t$Age), "Age"] <- mean_age
 
-# Replacing NA in msleep dataset
+# Replacing NA in msleep dataset (slightly different method)
 library(tidyverse)
 
 msleep
